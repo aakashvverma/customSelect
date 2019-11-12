@@ -1,0 +1,71 @@
+<div class="container containerStyle">
+  <div class="row">
+      <div class="col-md-12">
+          <h1>Dropdown with search</h1>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Default</label>
+            <select (change)="defaultSelection($event)" [(ngModel)]="defaultSet" class="form-control searchSize" id="exampleFormControlSelect1">
+                <option value="" disabled selected>Colours</option>
+                <option *ngFor="let col of color" [value]="col.title">{{col.title}}</option>
+            </select>
+        </div>
+    </div>
+  </div>
+  <div class="row minset">
+    <div class="col-md-12">
+        <div (mouseleave)="showDropDown = false">
+            <!-- <button class="drop-toggle btn flat" (click)="showDropDown=!showDropDown">
+                <span *ngIf="checkedList.length<=0">Select</span>
+                <span *ngIf="checkedList.length>0">{{checkedList.join(', ')}}</span>
+                <i class="fa fa-angle-down"></i>
+            </button> -->
+            <div [ngClass]="{hide: !searchable}" class="">
+              <label for="usr">Dropdown</label>
+              <input type="text" placeholder="Search" class="form-control searchSize" (input)="filterSearch(searchtext)" [(ngModel)]="searchtext" id="usr">
+            </div>
+            <div class="drop-show">
+                <label [ngClass]="{hide: !multiselect}" class="containerparent">
+                    <input type="checkbox" [(ngModel)]="selectAllVal"  data-md-icheck (change)="selectAll($event)" />
+                      <span></span>
+                      <span class="checkmark"></span>
+                </label>
+                <label *ngFor="let a of searchArray">
+                    <label class="containerparent">
+                        <input type="checkbox" data-md-icheck [(ngModel)]="a.checked" (change)="getSelectedValue(a,a.title,$event)"/>
+                            <span>{{a.title}}</span>
+                          <span  [ngClass]="{hide: !multiselect}" class="checkmark"></span>
+                    </label>
+                    <!-- <input type="checkbox" [(ngModel)]="a.checked"
+                        (change)="getSelectedValue(a.checked,a.name)" />
+                    <span>{{a.name}}</span> -->
+                </label>
+                <label [ngClass]="{hide: !multiselect}" class="HI BT">
+                    <button type="button" class="btn btn-default FR btnstyleSubmit">Submit</button>
+                    <button type="button" class="btn btn-default FR MR btnstyleclear" (click)="clearSelectedOptions()">Clear</button>
+                </label>
+
+            </div>
+         </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+          <label>Result</label>
+      </div>
+      <div>
+          <button class="drop-toggle btn flat" >
+              <span *ngIf="checkedList.length<=0">Colors - </span>
+              <span *ngIf="checkedList.length>0">Colors -{{checkedList.join(', ')}}</span>
+              <i class="fa fa-angle-down"></i>
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

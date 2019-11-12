@@ -1,0 +1,150 @@
+.drop-toggle{
+  background-color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  border: 1px solid #ccc;
+  width: 233px;
+  text-align: left;
+}
+.drop-toggle i{
+  float:right;
+}
+.drop-show {
+  padding: 4px;
+  width: 222px;
+  background-color: #FFF;
+  border: 1px solid #dde1e6;
+  position: absolute;
+  z-index: 100;
+  -webkit-box-shadow: 0 6px 10px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 6px 10px rgba(0,0,0,.15);
+  box-shadow: 0 6px 10px rgba(0,0,0,.15);
+  margin-left: 1px;
+  border-top: 0px;
+}
+.drop-show label{
+  display:block;
+  font-size:15px;
+  cursor: pointer;
+}
+.drop-show label input{
+  vertical-align: top;
+}
+.drop-show label span{
+  display:inline-block;
+}
+.searchSize{
+  width: 222px;
+  height: 40px;
+}
+
+/* checkbox Style */
+
+.containerparent {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.containerparent input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.containerparent:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.containerparent input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.containerparent input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.containerparent .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.minset {
+  min-height: 306px;
+}
+.containerStyle {
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  background-color: #f8f8f8;
+  min-height: 560px;
+}
+.FR{
+  float: right;
+}
+.MR{
+  margin-right: 30px;
+}
+.HI{
+  height: 40px;
+}
+.hide {
+  display: none;
+}
+.drop-show .hide {
+  display: none;
+}
+.btnstyleSubmit {
+  color: forestgreen;
+  font-weight: bold;
+}
+
+.btnstyleclear {
+  color: black;
+  font-weight: bold;
+}
+
+.drop-show label span.hide {
+  display: none;
+}
+.BT {
+      border-top: 1px solid #ddd;
+}
